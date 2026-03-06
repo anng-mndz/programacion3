@@ -8,13 +8,13 @@ import java.util.List;
 public class JornadasDao {
 
     private static final String SQL_SELECT =
-            "SELECT Jor_codigo, Jor_nombre, FROM jornadas";
+            "SELECT Jor_codigo, Jor_nombre FROM jornadas";
 
     private static final String SQL_INSERT =
             "INSERT INTO jornadas(Jor_codigo, Jor_nombre) VALUES(?,?)";
 
     private static final String SQL_UPDATE =
-            "UPDATE jornadas SET Jor_nombre=?, WHERE Jor_codigo=?";
+            "UPDATE jornadas SET Jor_nombre=? WHERE Jor_codigo=?";
 
     private static final String SQL_DELETE =
             "DELETE FROM jornadas WHERE Jor_codigo=?";
@@ -22,10 +22,6 @@ public class JornadasDao {
     private static final String SQL_QUERY =
             "SELECT Jor_codigo, Jor_nombre FROM jornadas WHERE Jor_codigo=?";
 
-
-    // =========================
-    // LISTAR TODOS LOS CURSOS
-    // =========================
     public List<Jornadas> select() {
 
         Connection conn = null;
@@ -42,7 +38,7 @@ public class JornadasDao {
 
             while (rs.next()) {
 
-                Jornadas jornada = new Jornadas ();
+                Jornadas jornada = new Jornadas();
 
                 jornada.setJor_codigo(rs.getInt("Jor_codigo"));
                 jornada.setJor_nombre(rs.getString("Jor_nombre"));
@@ -63,15 +59,10 @@ public class JornadasDao {
         return jornadas;
     }
 
-
-    // =========================
-    // INSERTAR CURSO
-    // =========================
     public int insert(Jornadas jornadas) {
 
         Connection conn = null;
         PreparedStatement stmt = null;
-
         int rows = 0;
 
         try {
@@ -96,15 +87,10 @@ public class JornadasDao {
         return rows;
     }
 
-
-    // =========================
-    // ACTUALIZAR CURSO
-    // =========================
     public int update(Jornadas jornadas) {
 
         Connection conn = null;
         PreparedStatement stmt = null;
-
         int rows = 0;
 
         try {
@@ -129,15 +115,10 @@ public class JornadasDao {
         return rows;
     }
 
-
-    // =========================
-    // ELIMINAR CURSO
-    // =========================
     public int delete(Jornadas jornadas) {
 
         Connection conn = null;
         PreparedStatement stmt = null;
-
         int rows = 0;
 
         try {
@@ -161,10 +142,6 @@ public class JornadasDao {
         return rows;
     }
 
-
-    // =========================
-    // BUSCAR CURSO
-    // =========================
     public Jornadas query(Jornadas jornadas) {
 
         Connection conn = null;
@@ -205,5 +182,4 @@ public class JornadasDao {
 
         return null;
     }
-
 }

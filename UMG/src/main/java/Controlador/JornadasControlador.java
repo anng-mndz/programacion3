@@ -7,7 +7,6 @@ public class JornadasControlador {
 
     JornadasDao dao = new JornadasDao();
 
-    // INSERTAR
     public void agregarJornada(int codigo, String nombre) {
 
         Jornadas jornada = new Jornadas(codigo, nombre);
@@ -15,14 +14,12 @@ public class JornadasControlador {
 
     }
 
-    // LISTAR (DEVUELVE LISTA PARA LA TABLA)
     public List<Jornadas> listarJornadas() {
 
         return dao.select();
 
     }
 
-    // BUSCAR
     public Jornadas buscarJornada(int codigo) {
 
         Jornadas jornada = new Jornadas();
@@ -32,7 +29,6 @@ public class JornadasControlador {
 
     }
 
-    // ACTUALIZAR
     public void actualizarJornada(int codigo, String nombre) {
 
         Jornadas jornada = new Jornadas(codigo, nombre);
@@ -40,7 +36,6 @@ public class JornadasControlador {
 
     }
 
-    // ELIMINAR
     public void eliminarJornada(int codigo) {
 
         Jornadas jornada = new Jornadas();

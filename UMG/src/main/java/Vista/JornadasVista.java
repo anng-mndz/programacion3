@@ -23,25 +23,24 @@ public class JornadasVista extends javax.swing.JFrame {
         initComponents();
     }
     
-     public void listarTabla() {
+    public void listarTabla() {
 
-        DefaultTableModel modelo = (DefaultTableModel) tablaCursos.getModel();
+    DefaultTableModel modelo = (DefaultTableModel) tablaCursos.getModel();
 
-        modelo.setRowCount(0);
+    modelo.setRowCount(0);
 
-        List<Jornadas> lista = controlador.listarJornadas();
+    List<Jornadas> lista = controlador.listarJornadas();
 
-        for (Jornadas c : lista) {
+    for (Jornadas c : lista) {
 
-            Object[] fila = new Object[1];
+        Object[] fila = new Object[2];
 
-            fila[0] = c.getJor_Codigo();
-            fila[1] = c.getJor_Nombre();
+        fila[0] = c.getJor_codigo();
+        fila[1] = c.getJor_nombre();
 
-            modelo.addRow(fila);
-        }
-
+        modelo.addRow(fila);
     }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,13 +108,13 @@ public class JornadasVista extends javax.swing.JFrame {
         tablaCursos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tablaCursos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Codigo", "Nombre", "Status"
+                "Codigo", "Nombre"
             }
         ));
         tablaCursos.setShowGrid(false);

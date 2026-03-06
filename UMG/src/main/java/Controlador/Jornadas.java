@@ -4,7 +4,6 @@ public class Jornadas {
 
     private int Jor_codigo;
     private String Jor_nombre;
-   
 
     public Jornadas() {
     }
@@ -14,7 +13,7 @@ public class Jornadas {
         this.Jor_nombre = Jor_nombre;
     }
 
-    public int Jor_codigo() {
+    public int getJor_codigo() {
         return Jor_codigo;
     }
 
@@ -34,19 +33,7 @@ public class Jornadas {
     public String toString() {
         return "Jornadas{" +
                 "Jor_codigo=" + Jor_codigo +
-                ",Jor_nombre=" + Jor_nombre +
+                ", Jor_nombre=" + Jor_nombre +
                 '}';
-    }
-
-    public int getJor_codigo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getJor_Nombre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getJor_Codigo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
